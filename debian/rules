@@ -1,4 +1,31 @@
 #!/usr/bin/make -f
 
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+include /usr/share/dpkg/architecture.mk
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+export DEB_CFLAGS_MAINT_STRIP  = -O2
+export DEB_CXXFLAGS_MAINT_STRIP  = -O2
+export DEB_CFLAGS_MAINT_APPEND  = -O3
+export DEB_CXXFLAGS_MAINT_APPEND  = -O3
+
+# Build tests by default but honor "nocheck" setting
+
+ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
+	CONFIGURE_OPTS := -DKISSFFT_TEST=ON
+else
+	CONFIGURE_OPTS := -DKISSFFT_TEST=OFF
+endif
+
 %:
-	dh $@
+	dh $@ --buildsystem=cmake
+
+override_dh_auto_configure:
+	dh_auto_configure -- \
+            -DCMAKE_BUILD_TYPE=ReleaseWithDebInfo \
+            -DBUILD_SHARED_LIBS=ON \
+            ${CONFIGURE_OPTS} \
+            -DUSE_LTO=1

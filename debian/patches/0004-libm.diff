@@ -1,0 +1,20 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -242,7 +242,7 @@
+ # Build with libm (-lm) on Unix
+ #
+ 
+-if(UNIX AND NOT CMAKE_CROSSCOMPILING)
++if(UNIX)
+     target_link_libraries(kissfft PRIVATE m)
+ endif()
+ 
+@@ -258,7 +258,7 @@
+     # Build with libm (-lm) on Unix
+     #
+ 
+-    if(UNIX AND NOT CMAKE_CROSSCOMPILING)
++    if(UNIX)
+         target_link_libraries(${NAME} PRIVATE m)
+     endif()
+ 

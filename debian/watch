@@ -1,0 +1,13 @@
+version=4
+
+# Release git tags
+
+opts="mode=git, \
+      pgpmode=none, \
+      repack, \
+      repacksuffix=+ds1, \
+      compression=xz, \
+      dversionmangle=auto" \
+https://github.com/mborgerding/kissfft \
+refs/tags/@ANY_VERSION@ \
+debian
