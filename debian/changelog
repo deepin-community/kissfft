@@ -1,5 +1,36 @@
-template-repository (1.0-1) unstable; urgency=medium
+kissfft (131.1.0-3) unstable; urgency=medium
 
-  * Initial release
+  * [DNM] Try unmerged PRs
+  * d/watch: Switch to git tags
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Vasyl Gello <vasek.gello@gmail.com>  Fri, 18 Nov 2022 21:57:24 +0000
+
+kissfft (131.1.0-2) unstable; urgency=medium
+
+  * Fix github link in watchfile
+  * Bump standards version - no changes required
+
+ -- Vasyl Gello <vasek.gello@gmail.com>  Thu, 07 Oct 2021 04:48:30 +0000
+
+kissfft (131.1.0-1) unstable; urgency=medium
+
+  * Change watchfile to tagged releases
+  * Drop unnecessary patches
+  * New upstream version 131.1.0
+  * Reflect file name changes in tagged release (and add Breaks against the
+    packages that links to it).
+
+ -- Vasyl Gello <vasek.gello@gmail.com>  Tue, 16 Feb 2021 13:08:39 +0000
+
+kissfft (131+git20201106.cc862cb-2) unstable; urgency=medium
+
+  * Team upload.
+  * Tentative fix for FTBFS on kfreebsd.
+
+ -- Mattia Rizzolo <mattia@debian.org>  Thu, 21 Jan 2021 22:12:54 +0100
+
+kissfft (131+git20201106.cc862cb-1) unstable; urgency=medium
+
+  * Initial upload (Closes: #950180)
+
+ -- Vasyl Gello <vasek.gello@gmail.com>  Fri, 08 Jan 2021 12:04:27 +0000
