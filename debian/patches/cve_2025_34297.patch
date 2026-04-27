@@ -1,0 +1,32 @@
+Description: Fix CVE-2025-34297: integer overflow on 32-bit platforms in kiss_fft_alloc
+ Add overflow check in kiss_fft_alloc to prevent integer overflow when
+ calculating memory requirements on 32-bit platforms where SIZE_MAX is
+ smaller than the required allocation size.
+Author: Mark Borgerding <markb@3db-labs.com>
+Origin: upstream, https://github.com/mborgerding/kissfft/commit/1b08316582049c3716154caefc0deab8758506e3
+Bug: https://security-tracker.debian.org/tracker/CVE-2025-34297
+Forwarded: not-needed
+---
+ kiss_fft.c | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+--- a/kiss_fft.c
++++ b/kiss_fft.c
+@@ -7,6 +7,7 @@
+  */
+ 
+ 
++#include <stdint.h>
+ #include "_kiss_fft_guts.h"
+ /* The guts header contains all the multiplication and addition macros that are defined for
+  fixed or floating point complex numbers.  It also delares the kf_ internal functions.
+@@ -339,6 +340,10 @@ kiss_fft_cfg kiss_fft_alloc(int nfft,int
+     KISS_FFT_ALIGN_CHECK(mem)
+ 
+     kiss_fft_cfg st=NULL;
++    // check for overflow condition {memneeded > SIZE_MAX}.
++    if (nfft >= (SIZE_MAX - 2*sizeof(struct kiss_fft_state))/sizeof(kiss_fft_cpx))
++        return NULL;
++
+     size_t memneeded = KISS_FFT_ALIGN_SIZE_UP(sizeof(struct kiss_fft_state)
+         + sizeof(kiss_fft_cpx)*(nfft-1)); /* twiddle factors*/
