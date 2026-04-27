@@ -1,3 +1,10 @@
+kissfft (131.1.0-3deepin1) unstable; urgency=medium
+
+  * Fix CVE-2025-34297: integer overflow on 32-bit platforms in
+    kiss_fft_alloc
+
+ -- deepin-ci-robot <packages@deepin.org>  Mon, 27 Apr 2026 19:30:45 +0800
+
 kissfft (131.1.0-3) unstable; urgency=medium
 
   * [DNM] Try unmerged PRs
