@@ -2,4 +2,6 @@
 0002-PR69.patch
 0003-PR70.patch
 0004-libm.diff
-cve_2025_34297.patch
+#cmake_4.patch
+0001-check-for-overflow-on-32-bit-platform-closes-120.patch
+0002-kiss_fftndr_alloc-check-for-overflow-and-_perhaps_-l.patch

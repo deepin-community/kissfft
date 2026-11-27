@@ -1,9 +1,35 @@
-kissfft (131.1.0-3deepin1) unstable; urgency=medium
+kissfft (131.1.0-4.1~deb13u1) trixie; urgency=medium
 
-  * Fix CVE-2025-34297: integer overflow on 32-bit platforms in
-    kiss_fft_alloc
+  * Non-maintainer upload.
+  * Rebuild for trixie.
+    - Drop the CMake 4 fix.
 
- -- deepin-ci-robot <packages@deepin.org>  Mon, 27 Apr 2026 19:30:45 +0800
+ -- Adrian Bunk <bunk@debian.org>  Sat, 09 May 2026 17:31:44 +0300
+
+kissfft (131.1.0-4.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * CVE-2025-34297: Integer Overflow on 32-bit Systems
+    (Closes: #1131147)
+  * CVE-2026-41445: Integer Overflow in kiss_fftndr_alloc()
+    (Closes: #1134493)
+
+ -- Adrian Bunk <bunk@debian.org>  Thu, 07 May 2026 14:02:10 +0300
+
+kissfft (131.1.0-4) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Vasyl Gello ]
+  * Fix lintian warnings
+
+  [ Dylan Aïssi ]
+  * Cherry-pick upstream patch to improve compatibility with cmake 4
+  * Update debian/salsa-ci.yml
+  * Switch Build-Dep from pkg-config to pkgconf
+  * Standards-Version: 4.7.2 (routine-update)
+
+ -- Dylan Aïssi <daissi@debian.org>  Thu, 25 Sep 2025 23:32:11 +0200
 
 kissfft (131.1.0-3) unstable; urgency=medium
 
