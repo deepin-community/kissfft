@@ -9,10 +9,10 @@ Build-Depends:
  debhelper-compat (= 13),
  libfftw3-dev,
  libpng-dev,
- pkg-config,
+ pkgconf,
  python3,
  python3-numpy,
-Standards-Version: 4.6.0
+Standards-Version: 4.7.2
 Rules-Requires-Root: no
 Homepage: https://github.com/mborgerding/kissfft
 Vcs-Git: https://salsa.debian.org/multimedia-team/kissfft.git

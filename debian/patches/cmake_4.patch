@@ -1,0 +1,27 @@
+From c519408e76191e1ffc301f6edcbd14559b8da298 Mon Sep 17 00:00:00 2001
+From: Christophe Marin <krop@users.noreply.github.com>
+Date: Fri, 12 Sep 2025 07:15:57 +0200
+Subject: [PATCH] kissfft-config.cmake: Bump minimum version to 3.10
+Forwarded: https://github.com/mborgerding/kissfft/pull/101
+Origin: upstream, https://github.com/mborgerding/kissfft/commit/c519408
+
+---------
+
+Co-authored-by: Martin <spleefer90@gmail.com>
+---
+ kissfft-config.cmake.in | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/kissfft-config.cmake.in b/kissfft-config.cmake.in
+index cd7139a..157fe75 100644
+--- a/kissfft-config.cmake.in
++++ b/kissfft-config.cmake.in
+@@ -24,7 +24,7 @@
+ 
+ @PACKAGE_INIT@
+ 
+-cmake_minimum_required(VERSION 3.3)
++cmake_minimum_required(VERSION 3.10)
+ 
+ # Set include glob of config files using SHARED/static component, BUILD_SHARED_LIBS by default
+ set(_kissfft_shared_detected OFF)
